@@ -17,7 +17,7 @@ run
 - python ./model-profile.py
 
 
-# step3
+# step 3
 
 This script transform ONNX models using profile data from ONNX Runtime to eliminate dynamic shapes.
 
