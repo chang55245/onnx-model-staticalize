@@ -5,7 +5,7 @@ Transform dynamic shapes in llm onnx models to static.
 install onnx, onnx-mlir, and onnxruntime.
 
 # step 1
-Use onnx runtime to collect the model with correct OP, directly using Qwen3 will cause onnx-mlir errors.
+Use onnx runtime to collect the model with correct OPs, directly using Qwen3 will cause onnx-mlir errors.
  
 run 
 - python -m onnxruntime.tools.symbolic_shape_infer --input /your/path/to/Qwen3-0.6B-ONNX/onnx/model_int8.onnx --output model_static.onnx --auto_merge
