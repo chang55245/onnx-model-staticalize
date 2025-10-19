@@ -22,7 +22,7 @@ run
 This script updates ONNX model shapes using runtime profile data from ONNX Runtime to eliminate dynamic shapes.
 
 run 
-- python update_shapes_from_profile.py model_static.onnx onnxruntime_profile__2025-10-18_19-01-11.json -o model_fixed.onnx
+- python update_shapes_from_profile.py model_static.onnx onnxruntime_profile.json -o model_fixed.onnx
 
 # step 4
 
