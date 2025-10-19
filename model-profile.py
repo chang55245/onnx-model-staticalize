@@ -5,7 +5,7 @@ import numpy as np
 sess_options = ort.SessionOptions()
 sess_options.enable_profiling = True  # turn on profiling
 sess_options.optimized_model_filepath = "model-mn.onnx"
-session = ort.InferenceSession("/home/lchang21/onnx/test/steady-shape/output/model_static.onnx", sess_options, providers=["CPUExecutionProvider"])
+session = ort.InferenceSession("/your/path/to/model_static.onnx", sess_options, providers=["CPUExecutionProvider"])
 # === Inspect and prepare inputs ===
 np_type_map = {
     "tensor(float)": np.float32,
