@@ -18,7 +18,7 @@ run
 
 
 # step3
-Lower the model to ONNXIR, you will still get dynamic shapes with question marks(?), but you can check these shapes in the onnxruntime_profile file.
+Lower the model to ONNXIR, you will still get dynamic shapes with question marks(?), but you can check these shapes in the onnxruntime_profile file. Using the key search: output_type_shape, input_type_shape, node name, and so on.
 
 /your/path/to/onnx-mlir --EmitONNXIR \
 model_static.onnx -o model-result.mlir
