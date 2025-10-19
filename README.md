@@ -12,7 +12,7 @@ Use onnx runtime to collect the correct model, directly use Qwen3 will cause onn
 # step2
 Profile the model to get shape information
 
-./model-profile.py
+- run python ./model-profile.py
 
 
 # step3
