@@ -13,13 +13,13 @@ run
 # step 2
 Profile the model to get runtime shape information.
 
-run
+Set up the path in model-profile.py and run
 - python ./model-profile.py
 
 
 # step 3
 
-This script transform ONNX models using profile data from ONNX Runtime to eliminate dynamic shapes.
+This script transforms ONNX models using profile data from ONNX Runtime to eliminate dynamic shapes.
 
 run 
 - python update_shapes_from_profile.py model_static.onnx onnxruntime_profile.json -o model_fixed.onnx
