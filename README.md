@@ -4,12 +4,13 @@ Transform dynamic shapes in LLM ONNX model files to static.
 # step 0
 Install onnx, onnx-mlir, and onnxruntime.
 
-onnx                 1.14.1 \\
-onnx_graphsurgeon    0.5.8 \\
-onnxconverter-common 1.16.0 \\
-onnxruntime          1.23.1 \\
-onnxsim              0.4.36 \\
-protobuf             6.33.0 \\
+Recommanded versions:
+- onnx                 1.14.1
+- onnx_graphsurgeon    0.5.8
+- onnxconverter-common 1.16.0
+- onnxruntime          1.23.1
+- onnxsim              0.4.36
+- protobuf             6.33.0
 
 # step 1
 Use the ONNX Runtime to rewrite the model with correct OPs; directly using Qwen3 will cause ONNX-MLIR errors.
