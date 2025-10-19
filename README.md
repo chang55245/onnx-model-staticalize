@@ -18,7 +18,15 @@ run
 
 
 # step3
-Lower the model to ONNXIR, you will still get dynamic shapes with question marks(?), but you can check these shapes in the onnxruntime_profile file. Using the key search: output_type_shape, input_type_shape, node name, and so on.
+
+This script updates ONNX model shapes using runtime profile data from ONNX Runtime to eliminate dynamic shapes.
+
+run 
+- python update_shapes_from_profile.py model_static.onnx onnxruntime_profile__2025-10-18_19-01-11.json -o model_fixed.onnx
+
+# step 4
+
+Lower the model to ONNXIR
 
 /your/path/to/onnx-mlir --EmitONNXIR \
-model_static.onnx -o model-result.mlir
+model_fixed.onnx -o updated-static.mlir
