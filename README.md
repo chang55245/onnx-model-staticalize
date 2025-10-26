@@ -21,7 +21,7 @@ run
 # Step 2
 Profile the model to get runtime shape information.
 
-Set up the path in model-profile.py, adjust the variable "num_heads = 8" in model-profile.py according to the entry "num_key_value_heads": 8 in the model's config file from huggingface/onnx_community
+Set up the path in *model-profile.py*, adjust the variable *num_heads = 8* in *model-profile.py* according to the entry *"num_key_value_heads": 8* in the model's config file *config.json* from *huggingface/onnx_community*
 and run
 - python ./model-profile.py
 
@@ -35,7 +35,7 @@ run
 
 # Step 4
 
-Lower the model to ONNXIR
+Lowering the model to ONNXBasic instead of ONNXIR. Because the IR lowering includes some shape inference passes that cause errors.
 
 /your/path/to/onnx-mlir --EmitONNXBasic \
 model_fixed.onnx -o updated-static.mlir
