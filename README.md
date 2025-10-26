@@ -21,7 +21,7 @@ run
 # Step 2
 Profile the model to get runtime shape information.
 
-Set up the path in *model-profile.py*, adjust the variable *num_heads = 8* in *model-profile.py* according to the entry *"num_key_value_heads": 8* in the model's config file *config.json* from *huggingface/onnx_community*
+Set up the path of *model_static.onnx* in *model-profile.py*, adjust the variable *num_heads = 8* in *model-profile.py* according to the entry *"num_key_value_heads": 8* in the model's config file *config.json* from *huggingface/onnx_community*
 and run
 - python ./model-profile.py
 
@@ -31,7 +31,7 @@ and run
 This script transforms ONNX models using profile data from ONNX Runtime to eliminate dynamic shapes.
 
 run 
-- python update_shapes_from_profile.py model_static.onnx onnxruntime_profile.json -o model_fixed.onnx
+- python update_shapes_from_profile.py model_static.onnx onnxruntime_profile_*time_stamp*.json -o model_fixed.onnx
 
 # Step 4
 
