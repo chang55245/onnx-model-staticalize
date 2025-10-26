@@ -36,7 +36,7 @@ run
 
 # Step 4
 
-Lowering the model to ONNXBasic instead of ONNXIR. Because the IR lowering from ONNXBasic to ONNXIR includes some shape inference passes that may cause errors.
+Lowering the model to ONNXBasic instead of ONNXIR. Because the IR transformation from ONNXBasic to ONNXIR includes some shape inference passes that may cause errors.
 
 run 
 - /your/path/to/onnx-mlir --EmitONNXBasic model_fixed.onnx -o updated-static.mlir
