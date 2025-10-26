@@ -16,12 +16,13 @@ Recommended versions:
 Use the ONNX Runtime to rewrite the model with correct OPs; directly using Qwen3 will cause ONNX-MLIR errors.
  
 run 
-- python -m onnxruntime.tools.symbolic_shape_infer --input /your/path/to/Qwen3-0.6B-ONNX/onnx/model_int8.onnx --output model_static.onnx --auto_merge
+- python -m onnxruntime.tools.symbolic_shape_infer --input /your/path/to/Qwen3-0.6B-ONNX/onnx/model_int8.onnx --output model_static.onnx --auto_merge --save_as_external_data --external_data_size_threshold 1024
 
 # Step 2
 Profile the model to get runtime shape information.
 
-Set up the path in model-profile.py and run
+Set up the path in model-profile.py, adjust the variable "num_heads = 8" in model-profile.py according to the entry "num_key_value_heads": 8 in the model's config file from huggingface/onnx_community
+and run
 - python ./model-profile.py
 
 
@@ -36,5 +37,5 @@ run
 
 Lower the model to ONNXIR
 
-/your/path/to/onnx-mlir --EmitONNXIR \
+/your/path/to/onnx-mlir --EmitONNXBasic \
 model_fixed.onnx -o updated-static.mlir
