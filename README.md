@@ -21,7 +21,8 @@ run
 # Step 2
 Profile the model to get runtime shape information.
 
-Set up the path of *model_static.onnx* in *model-profile.py*, adjust the variable *num_heads = 8* in *model-profile.py* according to the entry *"num_key_value_heads": 8* in the model's config file *config.json* from *huggingface/onnx_community*
+- Mannually set up the path of *model_static.onnx* in *model-profile.py*, adjust the variable *num_heads = 8* in *model-profile.py* according to the entry *"num_key_value_heads": 8* in the model's config file *config.json* from *huggingface/onnx_community*
+
 and run
 - python ./model-profile.py
 
