@@ -16,7 +16,7 @@ Recommended versions:
 Use the ONNX Runtime to rewrite the model with correct OPs; directly using models from Huggingface will cause ONNX-MLIR errors.
  
 run 
-- python -m onnxruntime.tools.symbolic_shape_infer --input /your/path/to/Qwen3-0.6B-ONNX/onnx/model_int8.onnx --output model_static.onnx --auto_merge --save_as_external_data --external_data_size_threshold 1024
+- python -m onnxruntime.tools.symbolic_shape_infer --input /your/path/to/onnx/model.onnx --output model_static.onnx --auto_merge --save_as_external_data --external_data_size_threshold 1024
 
 # Step 2
 Profile the model to get runtime shape information.
